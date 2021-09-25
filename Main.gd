@@ -576,15 +576,15 @@ func _on_hypercube_pressed():
 
 func _on_cube_pressed():
 	generate_cube(0.5)
-	$geometry.text = "cube"
+	$geometry.text = "cube (3D)"
 
 func _on_planes_pressed():
 	generate_planes(0.5)
-	$geometry.text = "planes"
+	$geometry.text = "XY and ZW planes"
 
 func _on_fivecell_pressed():
 	generate_fivecell(0.8)
-	$geometry.text = "fivecell"
+	$geometry.text = "5-cell"
 
 func _on_sphere_pressed():
 	generate_sphere(12, 1.0)
