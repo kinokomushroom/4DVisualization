@@ -1,0 +1,311 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://default_env.tres" type="Environment" id=2]
+
+[sub_resource type="World" id=1]
+environment = ExtResource( 2 )
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="CameraPosition" type="ViewportContainer" parent="."]
+anchor_right = 0.5
+anchor_bottom = 1.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="CameraPosition"]
+size = Vector2( 640, 720 )
+own_world = true
+world = SubResource( 1 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="CameraOrigin" type="Spatial" parent="CameraPosition/Viewport"]
+
+[node name="Camera" type="Camera" parent="CameraPosition/Viewport/CameraOrigin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+fov = 45.0
+
+[node name="Balls" type="Spatial" parent="CameraPosition/Viewport"]
+
+[node name="Rods" type="Spatial" parent="CameraPosition/Viewport"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="CameraPosition/Viewport"]
+transform = Transform( -1, 5.01437e-08, -7.16125e-08, 0, 0.819152, 0.573577, 8.74228e-08, 0.573577, -0.819152, 0, 0, 0 )
+
+[node name="Projection" type="ViewportContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="Projection"]
+size = Vector2( 640, 720 )
+own_world = true
+world = SubResource( 1 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="CameraOrigin" type="Spatial" parent="Projection/Viewport"]
+
+[node name="Camera" type="Camera" parent="Projection/Viewport/CameraOrigin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+fov = 45.0
+
+[node name="Balls" type="Spatial" parent="Projection/Viewport"]
+
+[node name="Rods" type="Spatial" parent="Projection/Viewport"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Projection/Viewport"]
+transform = Transform( -1, 5.01437e-08, -7.16125e-08, 0, 0.819152, 0.573577, 8.74228e-08, 0.573577, -0.819152, 0, 0, 0 )
+
+[node name="perspective" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 24.0
+margin_top = 16.0
+margin_right = 108.0
+margin_bottom = 36.0
+toggle_mode = true
+text = "orthograhic"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="none" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 108.0
+margin_bottom = 68.0
+text = "none"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hypercube" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 128.0
+margin_top = 48.0
+margin_right = 212.0
+margin_bottom = 68.0
+text = "tesseract"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cube" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 232.0
+margin_top = 48.0
+margin_right = 316.0
+margin_bottom = 68.0
+text = "cube"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="planes" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 336.0
+margin_top = 48.0
+margin_right = 420.0
+margin_bottom = 68.0
+text = "planes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fivecell" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 440.0
+margin_top = 48.0
+margin_right = 524.0
+margin_bottom = 68.0
+text = "5-cell"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sphere" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 544.0
+margin_top = 48.0
+margin_right = 628.0
+margin_bottom = 68.0
+text = "4-sphere"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="show_basis" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 128.0
+margin_top = 16.0
+margin_right = 212.0
+margin_bottom = 36.0
+toggle_mode = true
+pressed = true
+text = "hide basis"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="points" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 232.0
+margin_top = 16.0
+margin_right = 316.0
+margin_bottom = 36.0
+toggle_mode = true
+text = "show points"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lines" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 336.0
+margin_top = 16.0
+margin_right = 420.0
+margin_bottom = 36.0
+toggle_mode = true
+pressed = true
+text = "hide lines"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coordinates" type="Button" parent="."]
+margin_left = 24.0
+margin_top = 16.0
+margin_right = 148.0
+margin_bottom = 36.0
+toggle_mode = true
+text = "show coordinates"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reset" type="Button" parent="."]
+margin_left = 168.0
+margin_top = 16.0
+margin_right = 264.0
+margin_bottom = 36.0
+text = "reset camera"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="orientation" type="Button" parent="."]
+margin_left = 288.0
+margin_top = 16.0
+margin_right = 407.0
+margin_bottom = 36.0
+toggle_mode = true
+text = "show orientation"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rotation" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = -32.0
+margin_right = 64.0
+margin_bottom = -18.0
+text = "no rotation"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="geometry" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = -32.0
+margin_right = 94.0
+margin_bottom = -18.0
+text = "none"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="show_control" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -112.0
+margin_top = -40.0
+margin_right = -11.0
+margin_bottom = -20.0
+toggle_mode = true
+text = "show controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controls_panel" type="PanelContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -656.0
+margin_top = -184.0
+margin_right = -11.0
+margin_bottom = -54.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controls_text" type="Label" parent="controls_panel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 638.0
+margin_bottom = 123.0
+text = "left screen rotate 3D view: left mouse button + move mouse
+left screen zoom 3D view: left mouse button + scroll wheel
+right screen rotate 3D view: right mouse button + move mouse
+right screen zoom 3D view: right mouse button + scroll wheel
+rotate 4D camera on plane: hold any two of following keys X/Y/Z/W (hold Shift for opposite rotation)
+move 4D camera closer to/further from origin: C/F
+quit application: Esc"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="perspective" to="." method="_on_perspective_toggled"]
+[connection signal="pressed" from="none" to="." method="_on_none_pressed"]
+[connection signal="pressed" from="hypercube" to="." method="_on_hypercube_pressed"]
+[connection signal="pressed" from="cube" to="." method="_on_cube_pressed"]
+[connection signal="pressed" from="planes" to="." method="_on_planes_pressed"]
+[connection signal="pressed" from="fivecell" to="." method="_on_fivecell_pressed"]
+[connection signal="pressed" from="sphere" to="." method="_on_sphere_pressed"]
+[connection signal="toggled" from="show_basis" to="." method="_on_show_basis_toggled"]
+[connection signal="toggled" from="points" to="." method="_on_points_toggled"]
+[connection signal="toggled" from="lines" to="." method="_on_lines_toggled"]
+[connection signal="toggled" from="coordinates" to="." method="_on_coordinates_toggled"]
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
+[connection signal="toggled" from="orientation" to="." method="_on_orientation_toggled"]
+[connection signal="toggled" from="show_control" to="." method="_on_show_control_toggled"]
